@@ -36,7 +36,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[セッション：SEO：直帰]
+          console.log("セッション：SEO：直帰")//[セッション：SEO：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -46,7 +46,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[セッション：SEO：非直帰]
+          console.log("セッション：SEO：非直帰")//[セッション：SEO：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -59,7 +59,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[セッション：SEO：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[セッション：SEO]
+          console.log("セッション：SEO")//[セッション：SEO]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
@@ -71,7 +71,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[セッション：広告：直帰]
+          console.log("セッション：広告：直帰") //[セッション：広告：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -81,7 +81,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[セッション：広告：非直帰]
+          console.log("セッション：広告：非直帰") //[セッション：広告：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -94,14 +94,14 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[セッション：広告：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[セッション：広告]
+          console.log("セッション：広告") //[セッション：広告]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
 
       } else {
         if (third_hierarchy == 1) {
-          //[セッション：直帰]
+          console.log("セッション：直帰") //[セッション：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -111,7 +111,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[セッション：非直帰]
+           console.log("セッション：非直帰") //[セッション：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -124,7 +124,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[セッション：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[セッション]
+          console.log("セッション") //[セッション]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
@@ -146,7 +146,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[回遊：SEO：直帰]
+          console.log("回遊：SEO：直帰") //[回遊：SEO：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -156,7 +156,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[回遊：SEO：非直帰]
+          console.log("回遊：SEO：非直帰") //[回遊：SEO：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -169,7 +169,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[回遊：SEO：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[回遊：SEO]
+          console.log("回遊：SEO") //[回遊：SEO]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
@@ -181,7 +181,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[回遊：広告：直帰]
+          console.log("回遊：広告：直帰") //[回遊：広告：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -191,7 +191,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[回遊：広告：非直帰]
+          console.log("回遊：広告：非直帰") //[回遊：広告：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -204,14 +204,14 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[回遊：広告：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[回遊：広告]
+          console.log("回遊：広告") //[回遊：広告]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
 
       } else {
         if (third_hierarchy == 1) {
-          //[回遊：直帰]
+          console.log("回遊：直帰") //[回遊：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -221,7 +221,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[回遊：非直帰]
+           console.log("回遊：非直帰") //[回遊：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -234,7 +234,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[回遊：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[回遊]
+          console.log("回遊") //[回遊]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
@@ -256,7 +256,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[再訪問：SEO：直帰]
+          console.log("再訪問：SEO：直帰") //[再訪問：SEO：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -266,7 +266,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[再訪問：SEO：非直帰]
+          console.log("再訪問：SEO：非直帰") //[再訪問：SEO：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -279,7 +279,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[再訪問：SEO：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[再訪問：SEO]
+          console.log("再訪問：SEO") //[再訪問：SEO]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
@@ -291,7 +291,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
         if (third_hierarchy == 1) {
-          //[再訪問：広告：直帰]
+          console.log("再訪問：広告：直帰") //[再訪問：広告：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -301,7 +301,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[再訪問：広告：非直帰]
+          console.log("再訪問：広告：非直帰") //[再訪問：広告：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -314,14 +314,14 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[再訪問：広告:CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[再訪問：広告]
+          console.log("再訪問：広告") //[再訪問：広告]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }
 
       } else {
         if (third_hierarchy == 1) {
-          //[再訪問：直帰]
+          console.log("再訪問：直帰") //[再訪問：直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -331,7 +331,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await fl3.enable(page)
           await fl20.filterClose(page)
         } else if (third_hierarchy == 2) {
-          //[再訪問：非直帰]
+          console.log("再訪問：非直帰") //[再訪問：非直帰]
           await fl6.filter_add_after(page)
           await page.waitForTimeout(8000)
           await fl4.filter_visit(page)
@@ -344,7 +344,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           //[再訪問：CV名]
           //await fl6.filter_add_after(page)
         } else {
-          //[再訪問]
+          console.log("再訪問")//[再訪問]
           await fl3.enable(page)
           await fl20.filterClose(page)
         }

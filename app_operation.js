@@ -19,7 +19,7 @@ var op15 = require('./filter')
 
 
 var data_details = []
-var filter_num = 11
+var filter_num = 1
 
 exports.operation = function(page,browser,viewportHeight,viewportWidth,study_page,narrow_url,google_drive_folder) {
   async function operation() {
