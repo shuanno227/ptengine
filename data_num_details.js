@@ -18,7 +18,7 @@ exports.num_details = function(page,data_details,filter_num,deviceType,google_dr
     
     await page.click(numDetail_button_selector)
     var num_details_row_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-heatmap > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div.modal.fade.pt-heatmap-countDetail__modal.js-pt-heatmap-countDetail__modal.ng-scope.in > div > div > div > div.pt-heatmap-countDetail__data > div.pt-heamap-countDetail__data-list.js-pt-heamap-countDetail__data-list.jspScrollable > div > div.jspPane > ul"
-    await page.waitForSelector(num_details_row_selector)
+    await page.waitForSelector(num_details_row_selector, {timeout : 120000})
     await page.waitForTimeout(5000)
 
     var num_details_row = await page.evaluate((selector) => {

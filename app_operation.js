@@ -27,10 +27,10 @@ exports.operation = function(page,browser,viewportHeight,viewportWidth,study_pag
     var second_hierarchy
     var third_hierarchy
     
-    for (first_hierarchy = 0; first_hierarchy <= 3; first_hierarchy++) {
+    for (first_hierarchy = 0; first_hierarchy <= 2; first_hierarchy++) {
       if(first_hierarchy != 0){
-
-        for (second_hierarchy = 0; second_hierarchy <= 2; second_hierarchy++) {
+     
+        for (second_hierarchy = 0; second_hierarchy <= 2; second_hierarchy++) { 
           for (third_hierarchy = 0; third_hierarchy < 3; third_hierarchy++) {
             
             console.log('filter' + filter_num + '----' + first_hierarchy + '：' + second_hierarchy + '：' + third_hierarchy)

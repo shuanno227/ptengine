@@ -14,7 +14,7 @@ var password = 'giraffe2017'
 //-----------------------------------------------//
 
 //---------取得データの保存先(google drive)---------//
-var google_drive_folder = "data1"
+var google_drive_folder = "data"
 
 //-----------------------------------------------//
 
@@ -49,7 +49,7 @@ async function cookieSetting() {
   let content = fs.readFileSync("/Users/shuanno/giraffe-co/giraffe-tool/scrape-resources/cookie.json");
   let cookie = JSON.parse(content);
   const LAUNCH_OPTION = {
-    headless : true,
+    headless : false,
     args: [
       '--disable-gpu',
       '--disable-dev-shm-usage',

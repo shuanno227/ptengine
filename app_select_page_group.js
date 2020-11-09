@@ -10,7 +10,7 @@ exports.select_pageGroup = function(page,pageGroup_title){
     await page.click(pageGroup_selector)
     
     var pageGroup_target_selector = `body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-pagescene-list > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div > div.clearfix.pt-pagescenelist.js-pt-pagescenelist > div > div.js-pagescenelist-table-container > div > div.pt-mod-table-panel.show > div > div > table > tbody > tr:nth-child(${target_count}) > td.qa-table-body-col-gname.qa-table-body-col-1.pt-table-body-col-gname.text-left.left > span`
-    await page.waitForSelector(pageGroup_target_selector)
+    await page.waitForSelector(pageGroup_target_selector, {timeout : 120000})
     var pageGroup_target = await page.evaluate((selector) => {
       return document.querySelector(selector).innerText;
     },pageGroup_target_selector)
@@ -33,7 +33,7 @@ exports.select_pageGroup = function(page,pageGroup_title){
         }
   
         var pageGroup_target_selector = `body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-pagescene-list > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div > div.clearfix.pt-pagescenelist.js-pt-pagescenelist > div > div.js-pagescenelist-table-container > div > div.pt-mod-table-panel.show > div > div > table > tbody > tr:nth-child(${target_count}) > td.qa-table-body-col-gname.qa-table-body-col-1.pt-table-body-col-gname.text-left.left > span`
-        await page.waitForSelector(pageGroup_target_selector)
+        await page.waitForSelector(pageGroup_target_selector, {timeout : 120000})
         var pageGroup_target = await page.evaluate((selector) => {
           return document.querySelector(selector).innerText;
         },pageGroup_target_selector)
