@@ -65,6 +65,10 @@ async function cookieSetting() {
   page = await browser.newPage();
   await page.setViewport({width: viewportWidth, height: viewportHeight})
   await page.setCookie(...cookie)
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'webdriver', ()=>{});
+    delete navigator.__proto__.webdriver;
+  });
   await page.goto('https://reportv3.ptengine.jp/login.html');
 }
 
@@ -75,7 +79,6 @@ async function cookieSetting() {
   await cookieSetting()
   await f1.ptLogin(page, email, password, profile)
   await f2.selectPeriod(page, start_month, start_day, end_month, end_day)
-  await page.waitForTimeout(5000)
   //await f3.select_page(page,study_page)
   await f5.select_pageGroup(page,pageGroup_title)
   await f4.operation(page,browser,viewportHeight,viewportWidth,study_page,narrow_url,google_drive_folder)
