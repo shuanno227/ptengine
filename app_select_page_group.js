@@ -5,11 +5,14 @@ var Jimp = require("jimp");
 exports.select_pageGroup = function(page,pageGroup_title){
   async function select_pageGroup() {
     target_count = 1
-    await page.waitForTimeout(5000)
+    await page.waitForTimeout(10000)
     var pageGroup_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-pagescene-list > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div > div.clearfix.pt-pagescenelist.js-pt-pagescenelist > div > div.js-pagescenelist-table-container > div > ul > li.js-pt-table-td-tips.js-pt-nav-item.qa-tab-item-groupname.qa-tab-item-2 > a"
+    await page.waitForTimeout(pageGroup_selector, {timeout : 120000})
+    await page.waitForTimeout(10000)
     await page.click(pageGroup_selector)
     
     var pageGroup_target_selector = `body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-pagescene-list > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div > div.clearfix.pt-pagescenelist.js-pt-pagescenelist > div > div.js-pagescenelist-table-container > div > div.pt-mod-table-panel.show > div > div > table > tbody > tr:nth-child(${target_count}) > td.qa-table-body-col-gname.qa-table-body-col-1.pt-table-body-col-gname.text-left.left > span`
+    await page.waitForTimeout(5000)
     await page.waitForSelector(pageGroup_target_selector, {timeout : 120000})
     var pageGroup_target = await page.evaluate((selector) => {
       return document.querySelector(selector).innerText;

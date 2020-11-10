@@ -11,11 +11,11 @@ exports.selectPeriod = function(page,start_month,start_day,end_month,end_day) {
     
     // カレンダーボタンをクリックしてウィンドウを表示
     let period_box_selector = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.pt-datepicker__date.js-pt-calendar"
-    await page.click(period_box_selector)
-    await page.waitForTimeout(2000)
-    let past_one_month = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.ranges > ul > li:nth-child(6)"
-    await page.click(past_one_month)
     await page.waitForTimeout(5000)
+    await page.click(period_box_selector)
+    let past_one_month = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.ranges > ul > li:nth-child(6)"
+    await page.waitForTimeout(3000)
+    await page.click(past_one_month)
     // //右側のカレンダーの年月を取得
     // let endPeriod = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.calendar.right > div.calendar-table > table > thead > tr:nth-child(1) > th.month"
     // await page.waitForSelector(endPeriod)

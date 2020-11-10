@@ -9,13 +9,13 @@ var csv = require('./data_export_csv')
 
 exports.num_details = function(page,data_details,filter_num,deviceType,google_drive_folder) {
   async function num_details(){
-    await page.waitForTimeout(2000)
     if (deviceType == "pc") {
       var numDetail_button_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-heatmap > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div.pt-heatmap.pt-heatmap-left.pt-panel.js-heatmap.js-heatmap-left.js-pt-mod-heatmapcode-symbol.ng-scope > div.pt-heatmap-main.js-heatmap-main.pt-heatmap-size-pc-a > div.pt-heatmap-toolbar.clearfix > div.pt-heatmap-toolbar-r > a"
     } else {
       var numDetail_button_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-heatmap > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div.pt-heatmap.pt-heatmap-left.pt-panel.js-heatmap.js-heatmap-left.js-pt-mod-heatmapcode-symbol.ng-scope > div.pt-heatmap-main.js-heatmap-main.pt-heatmap-size-smartphone-v > div.pt-heatmap-toolbar.clearfix > div.pt-heatmap-toolbar-r > a"
     }
-    
+    await page.waitForTimeout(5000)
+    await page.waitForSelector(numDetail_button_selector, {timeout : 120000})
     await page.click(numDetail_button_selector)
     var num_details_row_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-heatmap > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div.modal.fade.pt-heatmap-countDetail__modal.js-pt-heatmap-countDetail__modal.ng-scope.in > div > div > div > div.pt-heatmap-countDetail__data > div.pt-heamap-countDetail__data-list.js-pt-heamap-countDetail__data-list.jspScrollable > div > div.jspPane > ul"
     await page.waitForSelector(num_details_row_selector, {timeout : 120000})

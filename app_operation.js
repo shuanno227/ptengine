@@ -19,7 +19,7 @@ var op15 = require('./filter')
 
 
 var data_details = []
-var filter_num = 1
+var filter_num = 11
 
 exports.operation = function(page,browser,viewportHeight,viewportWidth,study_page,narrow_url,google_drive_folder) {
   async function operation() {
@@ -27,7 +27,7 @@ exports.operation = function(page,browser,viewportHeight,viewportWidth,study_pag
     var second_hierarchy
     var third_hierarchy
     
-    for (first_hierarchy = 0; first_hierarchy <= 2; first_hierarchy++) {
+    for (first_hierarchy = 2; first_hierarchy <= 3; first_hierarchy++) {
       if(first_hierarchy != 0){
      
         for (second_hierarchy = 0; second_hierarchy <= 2; second_hierarchy++) { 
@@ -35,7 +35,7 @@ exports.operation = function(page,browser,viewportHeight,viewportWidth,study_pag
             
             console.log('filter' + filter_num + '----' + first_hierarchy + '：' + second_hierarchy + '：' + third_hierarchy)
             await page.waitForTimeout(5000)
-            await op15.filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy)
+            await op15.filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy, 0)
             //デバイスタイプの選択
             var deviceType = "pc"
             console.log('pc')
@@ -97,7 +97,7 @@ exports.operation = function(page,browser,viewportHeight,viewportWidth,study_pag
       } else {
         console.log('filter' + filter_num + '----' + first_hierarchy + ':0:0')
         await page.waitForTimeout(5000)
-        //await op15.filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy)
+        //await op15.filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy, 0)
         //デバイスタイプの選択
         var deviceType = "pc"
         console.log('pc')
