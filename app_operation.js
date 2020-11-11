@@ -19,7 +19,7 @@ var op15 = require('./filter')
 
 
 var data_details = []
-var filter_num = 11
+var filter_num = 20
 
 exports.operation = function(page,browser,viewportHeight,viewportWidth,study_page,narrow_url,google_drive_folder) {
   async function operation() {
@@ -27,7 +27,7 @@ exports.operation = function(page,browser,viewportHeight,viewportWidth,study_pag
     var second_hierarchy
     var third_hierarchy
     
-    for (first_hierarchy = 2; first_hierarchy <= 3; first_hierarchy++) {
+    for (first_hierarchy = 3; first_hierarchy <= 3; first_hierarchy++) {
       if(first_hierarchy != 0){
      
         for (second_hierarchy = 0; second_hierarchy <= 2; second_hierarchy++) { 

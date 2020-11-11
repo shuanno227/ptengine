@@ -49,7 +49,7 @@ async function cookieSetting() {
   let content = fs.readFileSync("/Users/shuanno/giraffe-co/giraffe-tool/scrape-resources/cookie.json");
   let cookie = JSON.parse(content);
   const LAUNCH_OPTION = {
-    headless : false,
+    headless : true,
     args: [
       '--disable-gpu',
       '--disable-dev-shm-usage',
