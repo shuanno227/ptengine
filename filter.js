@@ -31,7 +31,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
       //セッションを選択
       await fl4.filter_visit(page)
       await fl5.narrow_filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy, 1)
-      if(error == 0 || error == 2) {
+      
         await fl2.filter_ok(page)
         
         if (second_hierarchy == 1) {
@@ -40,7 +40,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await page.waitForTimeout(8000)
           await fl7.inflow_source(page)
           await fl8.seo(page, 1)
-          if (error != 2) {
+          
 
             await fl2.filter_ok(page)
             await page.waitForTimeout(3000)
@@ -72,13 +72,13 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
               await fl3.enable(page)
               await fl20.filterClose(page)
             }
-          }
+          
         } else if (second_hierarchy == 2) {
           //広告を選択
           await fl6.filter_add_after(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy)
           await page.waitForTimeout(8000)
           await fl12.advertise(page)
-          if (error != 2) {
+          
 
             await fl2.filter_ok(page)
             await page.waitForTimeout(3000)
@@ -111,7 +111,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
               await fl20.filterClose(page)
             }
     
-          }
+          
         } else {
           if (third_hierarchy == 1) {
             console.log("セッション：直帰") //[セッション：直帰]
@@ -142,14 +142,14 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
             await fl20.filterClose(page)
           }
         }
-      } 
+      
 
 
     } else if (first_hierarchy == 2) {
       //回遊を選択
       await fl4.filter_visit(page)
       await fl5.narrow_filter(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy, 0)
-      if (error == 0 || error == 2) {
+    
 
         await fl2.filter_ok(page)
         await page.waitForTimeout(3000)
@@ -159,7 +159,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           await page.waitForTimeout(8000)
           await fl7.inflow_source(page)
           await fl8.seo(page, 1)
-          if (error != 2) {
+        
 
             await fl2.filter_ok(page)
             await page.waitForTimeout(3000)
@@ -191,13 +191,13 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
               await fl3.enable(page)
               await fl20.filterClose(page)
             }
-          }
+          
         } else if (second_hierarchy == 2) {
           //広告を選択
           await fl6.filter_add_after(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy)
           await page.waitForTimeout(8000)
           await fl12.advertise(page)
-          if (error != 2) {
+          
 
             await fl2.filter_ok(page)
             await page.waitForTimeout(3000)
@@ -230,7 +230,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
               await fl20.filterClose(page)
             }
     
-          }
+          
         } else {
           if (third_hierarchy == 1) {
             console.log("回遊：直帰") //[回遊：直帰]
@@ -262,7 +262,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
           }
         }
 
-      }  
+      
 
     } else if (first_hierarchy == 3) {
       //再訪問を選択
@@ -276,7 +276,6 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
         await page.waitForTimeout(8000)
         await fl7.inflow_source(page)
         await fl8.seo(page, 1)
-        if (error != 2) {
 
           await fl2.filter_ok(page)
           await page.waitForTimeout(3000)
@@ -308,13 +307,12 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
             await fl3.enable(page)
             await fl20.filterClose(page)
           }
-        }
+        
       } else if (second_hierarchy == 2) {
         //広告を選択
         await fl6.filter_add_after(page, narrow_url, first_hierarchy, second_hierarchy, third_hierarchy)
         await page.waitForTimeout(8000)
         await fl12.advertise(page)
-        if (error != 2) {
 
           await fl2.filter_ok(page)
           await page.waitForTimeout(3000)
@@ -346,7 +344,7 @@ exports.filter = function(page, narrow_url, first_hierarchy, second_hierarchy, t
             await fl3.enable(page)
             await fl20.filterClose(page)
           }
-        }
+        
 
       } else {
         if (third_hierarchy == 1) {
