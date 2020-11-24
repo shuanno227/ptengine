@@ -12,6 +12,8 @@ exports.ptLogin = function(page, email, password, profile) {
     await page.type('input[type="password"]', password);
     await page.waitForTimeout(3000);
     await page.click('button');
+    await page.waitForTimeout(5000)
+    await page.click('#pt-loginForm > div.panel-item.products > div.product-item.pte.js-login-pte > div > a')
 
     let profile_selector = 'body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-datacenter > header > div > nav > div.pt-header-container-fluid.clearfix > ul > li.pt-fl.pt-header-profile-wrap.pt-h56.js-tours__profile_list > div'
     let profile_selector_input = 'body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-datacenter > header > div > nav > div.pt-header-container-fluid.clearfix > ul > li.pt-fl.pt-header-profile-wrap.pt-h56.js-tours__profile_list > div > div.pt-light-panel.pt-transition.pt-header-whitecolor.pt-dropdown-select-list.pt-header-profile-dropbox.pt-panel-shadow.js-pt-header-hover-dropdown > div.pt-search.pt-mb10 > div > input'

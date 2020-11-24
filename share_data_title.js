@@ -39,7 +39,7 @@ exports.data_title = function(page,browser,data_details) {
 
     data_details.push(data_title_array)
 
-    await op1.arise_hidden_element(page2)
+    //await op1.arise_hidden_element(page2)
     await op2.heatmap_color(page2);
     
   }

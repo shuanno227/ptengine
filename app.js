@@ -14,7 +14,7 @@ var password = 'giraffe2017'
 //-----------------------------------------------//
 
 //---------取得データの保存先(google drive)---------//
-var google_drive_folder = "data"
+var google_drive_folder = "リバブル"
 
 //-----------------------------------------------//
 
@@ -24,17 +24,17 @@ var profile  = 'livable.co.jp'
 
 //-----------調査対象ページorグループの情報-----------//
 //ページグループで調査：pageGroup_title
-var pageGroup_title = "事業用　物件詳細"
+var pageGroup_title = "棟一覧"
 //単一ページで調査：study_page
 var study_page = 'https://officekukan.jp/moving/case/'
-var narrow_url = 'https://livable.co.jp/jigyo/C'
+var narrow_url = 'https://livable.co.jp/mansion/library/'
 //-----------------------------------------------//
 
 //---------------------調査期間--------------------//
 var start_month = "2020 10月"   //開始年月
-var start_day = "3"             //開始日
+var start_day = "1"             //開始日
 var end_month = "2020 10月"     //終了年月
-var end_day = "13"              //終了日
+var end_day = "30"              //終了日
 //-----------------------------------------------//
 
 
@@ -49,7 +49,7 @@ async function cookieSetting() {
   let content = fs.readFileSync("/Users/shuanno/giraffe-co/giraffe-tool/scrape-resources/cookie.json");
   let cookie = JSON.parse(content);
   const LAUNCH_OPTION = {
-    headless : true,
+    headless : false,
     args: [
       '--disable-gpu',
       '--disable-dev-shm-usage',

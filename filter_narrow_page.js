@@ -11,14 +11,15 @@ exports.narrow_filter = function(page, narrow_url, first_hierarchy, second_hiera
 
   async function narrow_filter() {
     try {
+      // 入口ページをクリック
       var visit_type_selector = "body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-heatmap > div.pt-container-fluid.js-container-fluid > section > article.pt-tc.pt-mod-filter-dimension.pop-layer.js-mod-filter-dimension > ul > li:nth-child(2)"
-      await page.waitForTimeout(8000)
       await page.waitForSelector(visit_type_selector, {timeout : 1200000})
       await page.click(visit_type_selector)
-      await page.waitForSelector('#js-mod-filter-choice-search-input', {timeout :0})
+      // 入口ページで絞りこむURLを入力するinput要素にテキストを打ち込む 
+      await page.waitForSelector('#js-mod-filter-choice-search-input', {timeout :1200000})
       await page.waitForTimeout(8000)
       await page.type('#js-mod-filter-choice-search-input', narrow_url)
-      await page.waitForTimeout(8000)
+      await page.waitForTimeout(30000)
       await page.keyboard.press('Enter')
       await narrow.filter_includeOrNot_button(page,include_select)
     } catch(err) {
