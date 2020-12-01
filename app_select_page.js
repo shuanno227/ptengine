@@ -7,6 +7,8 @@ var Jimp = require("jimp");
 
 exports.select_page = function(page,study_page) {
   async function select_page() {
+    await page.waitForTimeout(10000)
+    console.log('page check')
     target_count = 1
     var target_selector = `body > div.ng-scope > div.js-pt-main-outward.pt-main.ng-scope.pt-container-outward-pagescene-list > div.pt-container-fluid.js-container-fluid > div.pt-tab-content.pt-tab-content-margin-left-fat.js-pt-tab-content > div.ng-scope > div > div > div > div.clearfix.pt-pagescenelist.js-pt-pagescenelist > div > div.js-pagescenelist-table-container > div > div.pt-mod-table-panel.show > div > div > table > tbody > tr:nth-child(${target_count}) > td.qa-table-body-col-murl.qa-table-body-col-1.pt-table-body-col-murl.text-left.left > div > a.longtext-second.text-none.qa-page-item-url.js-table-td-a-linkage`
     var target_url = await page.evaluate((selector) => {

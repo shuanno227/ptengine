@@ -14,7 +14,7 @@ var password = 'giraffe2017'
 //-----------------------------------------------//
 
 //---------取得データの保存先(google drive)---------//
-var google_drive_folder = "リバブル"
+var google_drive_folder = "【1130】大滝さん"
 
 //-----------------------------------------------//
 
@@ -26,22 +26,22 @@ var profile  = 'livable.co.jp'
 //ページグループで調査：pageGroup_title
 var pageGroup_title = "棟一覧"
 //単一ページで調査：study_page
-var study_page = 'https://officekukan.jp/moving/case/'
-var narrow_url = 'https://livable.co.jp/mansion/library/'
+var study_page = 'https://livable.co.jp/kounyu/'
+var narrow_url = 'https://livable.co.jp/kounyu/'
 //-----------------------------------------------//
 
 //---------------------調査期間--------------------//
 var start_month = "2020 10月"   //開始年月
 var start_day = "1"             //開始日
 var end_month = "2020 10月"     //終了年月
-var end_day = "30"              //終了日
+var end_day = "31"              //終了日
 //-----------------------------------------------//
 
 
 var page // Puppeteer操作用
 var browser // Puppeteer操作用
-var viewportHeight = 1200 // ブラウザサイズの設定
-var viewportWidth = 1600 // ブラウザサイズの設定
+var viewportHeight = 1790 // ブラウザサイズの設定
+var viewportWidth = 1400 // ブラウザサイズの設定
 var scrollHeight = 0
 
 // Cookieの読み込み
@@ -49,7 +49,7 @@ async function cookieSetting() {
   let content = fs.readFileSync("/Users/shuanno/giraffe-co/giraffe-tool/scrape-resources/cookie.json");
   let cookie = JSON.parse(content);
   const LAUNCH_OPTION = {
-    headless : false,
+    headless : true,
     args: [
       '--disable-gpu',
       '--disable-dev-shm-usage',
@@ -79,8 +79,8 @@ async function cookieSetting() {
   await cookieSetting()
   await f1.ptLogin(page, email, password, profile)
   await f2.selectPeriod(page, start_month, start_day, end_month, end_day)
-  //await f3.select_page(page,study_page)
-  await f5.select_pageGroup(page,pageGroup_title)
+  await f3.select_page(page,study_page)
+  // await f5.select_pageGroup(page,pageGroup_title)
   await f4.operation(page,browser,viewportHeight,viewportWidth,study_page,narrow_url,google_drive_folder)
   await page.waitForTimeout(3000)
   await browser.close()

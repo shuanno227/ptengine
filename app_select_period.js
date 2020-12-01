@@ -14,9 +14,10 @@ exports.selectPeriod = function(page,start_month,start_day,end_month,end_day) {
     await page.waitForTimeout(5000)
     await page.click(period_box_selector)
     // let past_one_month = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.ranges > ul > li:nth-child(6)"
+    // let last_month = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.ranges > ul > li:nth-child(4)"
     // await page.waitForTimeout(3000)
-    // await page.click(past_one_month)
-    //右側のカレンダーの年月を取得
+    // await page.click(last_month)
+    // 右側のカレンダーの年月を取得
     let endPeriod = "#toolbar_left > div.pt-datepicker.js-date.pt-show > div.daterangepicker.dropdown-menu.ltr.show-calendar.opensright > div.calendar.right > div.calendar-table > table > thead > tr:nth-child(1) > th.month"
     await page.waitForSelector(endPeriod)
     var periodBox_endMonth = await page.evaluate((selector) => { // 右側のカレンダーの年月を変数periodBox_endMonthに代入
@@ -48,7 +49,7 @@ exports.selectPeriod = function(page,start_month,start_day,end_month,end_day) {
     }
     
     
-    end_calendar_of_span[indicator[1]].click();
+    end_calendar_of_span[indicator[0]].click();
     await page.waitForTimeout(3000)
 
     if (start_month == end_month) {

@@ -13,11 +13,13 @@ exports.screenshot = function(page,browser,heatmapType,deviceType,viewportHeight
     const pages = await browser.pages();
     const page2 = pages[pages.length-1];
     await page2.bringToFront();
-    
-    await page2.waitForTimeout(5000)
+    await page2.waitForTimeout(3000)
+    await page2.click('body > div.pt-heatmap-share > main > div.pt-heatmap.pt-panel.js-heatmap > div > div.pt-heatmap-toolbar.clearfix > div.pt-heatmap-toolbar-r')
+    await page2.waitForTimeout(15000)
     await scrollToBottom(page2, viewportHeight)
     // shareリンク先のフル画面のスクリーンショット
     await page2.screenshot({ path: `/Users/shuanno/giraffe-co/giraffe-tool/auto-tool/ptengine/image/page${pageIndex}.png`, fullPage: true })
+    await page2.waitForTimeout(5000)
     if (deviceType == "pc") {
       resizeForPC(heatmapType,pageIndex,filter_num,google_drive_folder,deviceType)
     } else {
